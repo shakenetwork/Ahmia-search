@@ -1,0 +1,197 @@
+/*
+  Ahmia styles
+*/
+
+/* color schemes */
+@dark-bg-color: #000;
+@light-bg-color: #fff;
+
+@accent-color: #ff707d;
+@link-color-dark: #000;
+@link-color-light: #fff;
+
+@text-on-dark-bg: #fff;
+@text-on-light-bg: #000;
+@text-on-light-bg-placeholder: #555;
+
+@light-white-alpha: rgba(255, 255, 255, 0.8);
+@medium-white-alpha: rgba(255, 255, 255, 0.4);
+@dark-white-alpha: rgba(255, 255, 255, 0.2);
+
+@light-grey-alpha: rgba(0, 0, 0, 0.2);
+@dark-grey-alpha: rgba(0, 0, 0, 0.9);
+@medium-grey-alpha: rgba(0, 0, 0, 0.4);
+@font-baseline-px: 12px;
+
+/* dumb mixins */
+.responsive {
+  box-sizing: border-box;
+}
+.sr {
+  position: absolute;
+  display: block;
+  top: -1000px;
+  left: -1000px;
+  width: 5px; height: 5px;
+  color: transparent;
+  background-color: transparent;
+}
+
+/*
+  "main"/desktop search styles
+  TODO: move to media query
+*/
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+body {
+  background-color: @dark-bg-color;
+  font-family: 'Roboto';
+  font-weight: light;
+  font-size: @font-baseline-px;
+}
+
+#imageOverlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  opacity: 0.4;
+  background-color: @dark-bg-color;
+  background-image: url('/images/metro.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+
+div.elastic.outer {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+div.elastic.inner {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+}
+
+#notTorBrowserWarning { display: none; }
+
+#ahmiaHeader {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  border-bottom: 1px solid @medium-grey-alpha;
+
+  .responsive;
+  #collapseIfResponsive { display: none; }
+  background-color: @accent-color;
+  nav {
+    margin: 0;
+    border-bottom: 3px solid @medium-grey-alpha;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    padding: 0 1em;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    &.primary, &.primary li { float: left; }
+    &.secondary, &.secondary li { float: right; }
+    &.primary li:first-child { margin-left: 0; }
+    &.secondary li:first-child { margin-right: 2em; }
+
+    li {
+      margin: 0.4em 0 0.4em 1em;
+      display: inline-block;
+      float: left;
+      list-style-type: none;
+
+      a {
+        color: @link-color-dark;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+#ahmiaMainContent {
+  color: @text-on-dark-bg;
+
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  width: 60%;
+
+  transform: translate(0%, -50%);
+  -webkit-transform: translate(0%, -50%);
+  -moz-transform: translate(0%, -50%);
+  -ms-transform: translate(0%, -50%);
+
+  h1 {
+    font-family: 'Alfphabet IV', 'Alfphabet';
+    font-size: 3.2em;
+    color: @text-on-dark-bg;
+    text-shadow: 0 0 0.5em @medium-grey-alpha;
+  }
+
+  #ahmiaSearchArea {
+    input[type=search] {
+      .responsive;
+      color: @text-on-light-bg-placeholder;
+      font-size: 1.6em;
+      line-height: 1.8em;
+      padding-left: 0.5em;
+      text-align: left;
+      min-width: 20em;
+      border: 0;
+      border-top: 2px solid @medium-grey-alpha;
+      box-shadow: 0 0 0.5em @dark-grey-alpha;
+    }
+    input[type=submit] {
+      .responsive;
+      background-color: @accent-color;
+      color: @link-color-dark;
+      border: 1px solid @accent-color;
+      border-top-width: 2px;
+      font-size: 1.6em;
+      line-height: 1.8em;
+      text-align: center;
+      padding: 0 0.8em;
+      &:hover {
+        color: @text-on-dark-bg;
+        text-shadow: 0 -1px 0 @light-grey-alpha;
+
+        transition: all 0.1s;
+      }
+    }
+  }
+
+  #ahmiaDescriptionArea {
+    margin-top: 2.5em;
+    border-top: 1px solid @medium-white-alpha;
+    padding-top: 2.3em;
+    a {
+      &:link { color: @accent-color; text-decoration: none; }
+      &:hover { text-decoration: underline; transition: all 0.2s; }
+      &:visited { text-decoration: underline; transition: all 0.2s; }
+    }
+    p {
+      font-size: 1.1em;
+      margin-top: 0;
+      margin-bottom: 1em;
+      line-height: 1.7em;
+      text-shadow: 0 0 0.5em @dark-grey-alpha;
+    }
+  }
+}

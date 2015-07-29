@@ -1,0 +1,74 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Ahmia &mdash; Search Tor hidden services</title>
+        <meta name="description" content="A search engine for services accessible on the Tor network.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet/less" href="less/style.less">
+        <script src="js/less.min.js"></script>
+        <script src="js/modernizr.js"></script>
+    </head>
+    <body>
+      <div id="imageOverlay">&nbsp;</div>
+      <div class="elastic outer">
+        <div id="content" class="elastic inner">
+        <div id="notTorBrowserWarning">
+          <p>It appears that you are not using the Tor Browser.</p>
+        </div>
+        <div id="ahmiaHeader" class="mini">
+          <nav>
+            <a href="#" id="collapseIfResponsive">&nbsp;<span class="sr">Collapse Menu</span></a>
+            <ul class="primary">
+              <li><a href="/about" title="Learn more about Ahmia and its team.">About Ahmia</a></li>
+              <li><a href="/directory" title="A directory of .onion services.">Directory</a></li>
+              <li><a href="/search" title="Advanced (full-text) search.">Advanced</a></li>
+              <li><a href="/stats/viewer" title="Statistics about the Ahmia engine.">Statistics</a></li>
+            </ul>
+            <ul class="secondary">
+              <li><a href="/add">Add your .onion</a></li>
+              <li><a href="/disclaimer">Disclaimer</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div id="ahmiaMainContent">
+          <div id="ahmiaSearchArea">
+            <h1>Ahmia</h1>
+            <form id="searchForm" class="autocomplete" action="/" method="get">
+              <input id="id_q" type="search" name="q">
+              <input type="submit" value="Search" style="submitButton">
+            </form>
+          </div>
+
+          <div id="ahmiaDescriptionArea">
+            <p>
+              Ahmia searches hidden services on the Tor network. To access these hidden services, you need
+              the <a href="https://www.torproject.org/projects/torbrowser.html.en">Tor browser bundle</a>.
+              We actively filter abuse material; if you find it, please <a href="/address">report it to us</a>
+              and we will remove it from the index as soon as possible.
+            </p>
+            <p>
+              For more about Ahmia, see <a href="/documentation/indexing">documentation info</a>, the
+              <a href="//twitter.com/AhmiaNews">Ahmia Twitter feed</a>, or maybe
+              <a href="bitcoin:3CMc52oegWqorFsBRcakUGHkZEQMfLP43s">donate to the project via BTC</a>.
+            </p>
+          </div>
+        </div>
+
+        <!-- end content -->
+        </div>
+      </div>
+
+      <script src="js/jquery.min.js"></script>
+      <script>
+        $(document).ready(function() {
+          $("#id_q").focus();
+        });
+      </script>
+    </body>
+</html>
