@@ -9,6 +9,21 @@
    * the Ahmia servers.
    **/
   $(document).ready(function() {
+    $('ol.searchResults li').each(function() {
+      $(this).on('click', $.proxy(
+        function(e) {
+          // todo scope into navigationKeyCapture
+          // or otherwise catch tor browser/usage
+          if ($(this).attr('href')) {
+            var setLink = $(this).attr('href');
+            window.location = setLink;
+          } else {
+            // fall back to h4 a:link if some issue
+            var headingLink = $(this).find('h4 a').attr('href');
+            window.location = headingLink;
+          }
+        }, this));
+    });
 
     navigationKeyCapture.listItems = $('ol.searchResults li');
     if (navigationKeyCapture.listItems.length) {
@@ -22,7 +37,6 @@
         break;
       }
     }
-
     $('#id_q').focus(function() {
       navigationKeyCapture.stopTracking();
     });
@@ -109,12 +123,12 @@
 
     startTracking: function() {
       $(this.listItems[this.selectedItem]).addClass('selected');
-      $(document).bind('keyup.navigationKeyTracker',
+      $(document).bind('keyup.navigationKeyCapture',
         $.proxy(this.event_trackKeyPressEvent, this));
     },
 
     stopTracking: function() {
-      $(document).unbind('keyup.navigationKeyTracker');
+      $(document).unbind('keyup.navigationKeyCapture');
     }
   });
 

@@ -4,7 +4,7 @@
 
 /* color schemes */
 @dark-bg-color: #000;
-@light-bg-color: #fff;
+@light-bg-color: #fafafa;
 
 /*
   Interesting colors to try:
@@ -28,6 +28,7 @@
 @medium-white-alpha: rgba(255, 255, 255, 0.4);
 @dark-white-alpha: rgba(255, 255, 255, 0.2);
 
+@ultralight-grey-alpha: rgba(127, 127, 127, 0.2);
 @light-grey-alpha: rgba(0, 0, 0, 0.2);
 @dark-grey-alpha: rgba(0, 0, 0, 0.9);
 @medium-grey-alpha: rgba(0, 0, 0, 0.4);
@@ -40,9 +41,10 @@
   This is for consistency -- nearly all search engines
   look like this, there is no need to change that here
 */
-@search-result-link-color: #00f;
-@search-result-link-color-visited: #30f;
-@search-result-link-color-active: #00f;
+@search-result-body-color: @dark-grey-alpha;
+@search-result-link-color: #438099;
+@search-result-link-color-visited: #52f;
+@search-result-link-color-active: #438099;
 @search-result-metadata-subdued: @medium-grey-alpha;
 @search-result-metadata-link-color: @medium-grey-alpha;
 @search-result-metadata-link-color-visited: @medium-grey-alpha;
@@ -330,10 +332,16 @@ div.elastic.inner {
     padding: 0;
     margin: 0 -1em;
     li {
+      .responsive;
+      border-top: 1px solid transparent;
+      border-bottom: 1px solid transparent;
+      cursor: pointer;
       padding: 1em;
       transition: background-color 0.3s;
       &.selected {
-        background-color: @accent-complementary-alpha;
+        border-top-color: @ultralight-grey-alpha;
+        border-bottom-color: @ultralight-grey-alpha;
+        background-color: @light-white-alpha;
         transition: background-color 0.3s;
         h4 {
           a:link {
@@ -367,6 +375,7 @@ div.elastic.inner {
         }
       }
       p {
+        color: @search-result-body-color;
         margin: 0.7em 0 0;
       }
       p.metadata {
