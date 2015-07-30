@@ -17,6 +17,7 @@
         var item = $(navigationKeyCapture.listItems[i]);
         if (item.hasClass('selectedItem')) {
           navigationKeyCapture.selectedItem = i;
+          $(navigationKeyCapture.listItems[navigationKeyCapture.selectedItem]).focus();
         }
         break;
       }
