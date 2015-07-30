@@ -74,6 +74,7 @@
 .searchForm {
   input[type=search] {
     .responsive;
+    color: @text-on-light-bg;
     /* color: @text-on-light-bg-placeholder; */
     font-size: 1.6em;
     line-height: 1.8em;
@@ -152,8 +153,8 @@ div.elastic.inner {
 #notTorBrowserWarning { display: none; }
 
 #ahmiaHeader {
-  &.mini { 
-    h1 { display: none; } 
+  &.mini {
+    h1 { display: none; }
     #searchForm { display: none; }
 
     position: absolute;
@@ -287,5 +288,15 @@ div.elastic.inner {
       line-height: 1.7em;
       text-shadow: 0 0 0.5em @dark-grey-alpha;
     }
+  }
+}
+
+#ahmiaResultsPage {
+  margin: 1.0em;
+  p {
+    font-size: 1.1em;
+    color: @text-on-light-bg;
+    margin: 1em 0;
+    line-height: 1.7em;
   }
 }
