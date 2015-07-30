@@ -85,6 +85,15 @@
         this.selectedItem = next;
         $(this.listItems[this.selectedItem]).addClass('selected');
       }
+      this.setScrollPosition();
+    },
+
+    setScrollPosition: function() {
+      var selected = $(this.listItems[this.selectedItem]);
+      var offset_y = selected.height();
+      if (typeof selected.scrollTo === 'function') {
+        $.scrollTo(selected, undefined, { interrupt: true, offset: { top: offset_y }});
+      }
     },
 
     select: function() {
