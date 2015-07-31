@@ -1,0 +1,112 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Lorem ipsum dolor sit &mdash; Ahmia</title>
+        <meta name="description" content="A search engine for services accessible on the Tor network.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet/less" href="less/style.less">
+        <script src="js/less.min.js"></script>
+        <script src="js/modernizr.js"></script>
+    </head>
+    <body>
+      <a id="top"></a>
+      <div class="outer">
+        <div id="content" class="inner">
+        <div id="notTorBrowserWarning">
+          <p>It appears that you are not using the Tor Browser.</p>
+        </div>
+        <div id="ahmiaHeader" class="maxi">
+          <div class="maxiContent">
+            <h1><a href="/">Ahmia</a></h1>
+            <form id="searchForm" class="searchForm autocomplete" action="/" method="get">
+              <input id="id_q" type="search" name="q" value="Lorem ipsum dolor sit">
+              <input type="submit" value="Search" style="submitButton">
+            </form>
+          </div>
+          <nav>
+            <a href="#" id="collapseIfResponsive">&nbsp;<span class="sr">Collapse Menu</span></a>
+            <ul class="primary">
+              <li><a href="/about" title="Learn more about Ahmia and its team.">About Ahmia</a></li>
+              <li><a href="/directory" title="A directory of .onion services.">Directory</a></li>
+              <li><a href="/search" title="Advanced (full-text) search.">Advanced</a></li>
+              <li><a href="/stats/viewer" title="Statistics about the Ahmia engine.">Statistics</a></li>
+            </ul>
+            <ul class="secondary">
+              <li><a href="/add">Add your .onion</a></li>
+              <li><a href="/disclaimer">Disclaimer</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div id="ahmiaAboutPage">
+          <div class="aboutAhmia">
+          <h2>About Ahmia</h2>
+          <p>
+          Ahmia's mission is to create the premier search engine for services residing on the Tor
+          anonymity network. In doing so, we hope to share meaningful statistics, insights, and news
+          about the Tor network and the Tor project.
+          </p>
+          <p>
+          Contributors to Ahmia believe that the Tor network is an important, anonymous, and resilient
+          distributed platform for anonymity and privacy worldwide. By providing a search engine for
+          what many call the "deep web" or "dark net", Ahmia makes hidden services accessible to a wide
+          range of people, not just Tor network early adopters.
+          </p>
+          <p>
+          The Ahmia search system is also integrated with the open source <a href="//globaleaks.org/">Globaleaks project</a>
+          (to handle suggestions and feedback anonymously) and <a href="//wiki.tor2web.org/index.php/Main_Page">Tor2Web</a>, a service that helps
+          people not yet on the Tor network visit Tor hidden services.
+          </p>
+          <p>
+          Since September 2013, Ahmia has been affiliated with
+          <a href="//logioshermes.org">Hermes Center for Transparency and Digital Rights</a>, an organization devoted to
+          developing and promoting transparency and freedom-enabling technologies worldwide.
+          </p>
+          </div>
+          <div class="aboutTeam">
+          <h3>About Juha Nurmi, Ahmia Project Leader</h3>
+          <img src="/static/images/team_juha.jpg" alt="Juha Nurmi">
+          <p>
+          <strong>Juha Nurmi</strong> (<a href="mailto:juha.nurmi@ahmia.fi">juha.nurmi@ahmia.fi</a>) is the
+          founder and project leader of the Ahmia search engine project. He is the CEO of data mining and
+          security company Dignify, a security researcher, and has been involved in numerous projects funded
+          by both the commercial and government spheres. Juha is also a noted lecturer and public speaker. Juha's
+          work on Ahmia has been in part sponsored by the Google Summer of Code.
+          </p>
+          </div>
+          <div class="moreOnAhmia">
+          <h3>More on Ahmia</h3>
+          <p>Ahmia is an active area of research, and is <a href="//github.com/juhanurmi/ahmia">in development on GitHub</a>
+          as a free and open source project. If you would like to learn more about Ahmia, download our documentation or 
+          presentations on the search engine:</p>
+          <ul>
+            <li><a href="/documentation/">Documentation &amp; Statistics</a></li>
+            <li><a href="/static/presentation/Tor_Ecosystem2.pdf">A presentation about Ahmia and the Tor Ecosystem</a></li>
+          </ul>
+          </div>
+          <div class="credits">
+          <p>We extend a thank you to Ahmia's supporters:</p>
+          <ul>
+            <li><img src="/static/images/globaleaks.png" alt="Globaleaks Platform"></li>
+            <li><img src="/static/images/tor2web.png" alt="Tor2Web Platform"></li>
+            <li><img src="/static/images/hermes.png" alt="HERMES Center for Transparency and Digital Rights"></li>
+            <li><img src="/static/image/tor.png" alt="Tor Project"></li>
+          </ul>
+          <p class="beg">If you believe in Ahmia, please <a href="bitcoin:3CMc52oegWqorFsBRcakUGHkZEQMfLP43s">donate BTC</a>.</p>
+          </div>
+        </div>
+
+        <!-- end content -->
+        </div>
+      </div>
+
+      <script src="js/jquery.min.js"></script>
+      <script src="js/jquery.scrollTo.js"></script>
+      <script src="js/results.js"></script>
+    </body>
+</html>
