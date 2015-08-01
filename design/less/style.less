@@ -111,7 +111,7 @@
 
 /* core controls */
 .searchForm {
-  input[type=search] {
+  input[type=search], input[type=text] {
     .responsive;
     color: @text-on-light-bg;
     /* color: @text-on-light-bg-placeholder; */
@@ -494,6 +494,31 @@ div.elastic.inner {
       font-size: 1.1em;
       float: right;
     }
+  }
+}
+
+#ahmiaAddOnion {
+  width: 70%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding-top: 1em;
+
+  p {
+    font-size: 1.3em;
+    line-height: 1.8em;
+    text-align: center;
+    border-bottom: 1px solid @light-grey-alpha;
+    padding-bottom: 2em;
+    margin-bottom: 2em;
+  }
+  .searchForm;
+  form {
+    display: flex;
+    justify-content: center;
+  }
+  input[type="text"] {
+    box-shadow: 0 0 0.1em @medium-grey-alpha;
+    margin-right: 0.5em;
   }
 }
 
