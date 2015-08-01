@@ -12,13 +12,18 @@
   #ff707d
   #70d5ff
 */
-
+/*
 @accent-color: #70d5ff;
 @accent-color-alpha: rgba(112, 213, 255, 0.2);
+@accent-color: #ff707d;
+@accent-color-alpha: rgba(255, 112, 125, 0.2);
+*/
+@accent-color: #303030;
+@accent-color-alpha: rgba(48, 48, 48, 0.2);
 @accent-complementary: #c7ff70;
 @accent-complementary-alpha: rgba(199, 255, 112, 0.2);
 @link-color-dark: #000;
-@link-color-light: #fff;
+@link-color-light: #bbb;
 
 @text-on-dark-bg: #fff;
 @text-on-light-bg: #000;
@@ -34,6 +39,9 @@
 @medium-grey-alpha: rgba(0, 0, 0, 0.4);
 @font-baseline-px: 12px;
 
+@common-link-color: #19749b;
+@common-link-color-visited: #294957;
+
 /*
   LINK COLORS
 
@@ -42,9 +50,9 @@
   look like this, there is no need to change that here
 */
 @search-result-body-color: @dark-grey-alpha;
-@search-result-link-color: #438099;
+@search-result-link-color: @common-link-color;
 @search-result-link-color-visited: #52f;
-@search-result-link-color-active: #438099;
+@search-result-link-color-active: @common-link-color-visited;
 @search-result-metadata-subdued: @medium-grey-alpha;
 @search-result-metadata-link-color: @medium-grey-alpha;
 @search-result-metadata-link-color-visited: @medium-grey-alpha;
@@ -72,6 +80,18 @@
          url('/fonts/roboto/roboto_regular_macroman/Roboto-Regular-webfont.svg#robotoregular') format('svg');
     font-weight: normal;
     font-style: normal;
+}
+
+@font-face {
+    font-family: 'robotolight';
+    src: url('/fonts/roboto/roboto_light_macroman/Roboto-Light-webfont.eot');
+    src: url('/fonts/roboto/roboto_light_macroman/Roboto-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/roboto/roboto_light_macroman/Roboto-Light-webfont.woff') format('woff'),
+         url('/fonts/roboto/roboto_light_macroman/Roboto-Light-webfont.ttf') format('truetype'),
+         url('/fonts/roboto/roboto_light_macroman/Roboto-Light-webfont.svg#robotolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
 
@@ -141,6 +161,23 @@ body {
   font-family: 'robotoregular', 'Roboto', 'Helvetica', sans-serif;
   font-weight: light;
   font-size: @font-baseline-px;
+
+  a{
+    &:link {
+      color: @common-link-color;
+      text-decoration: underline;
+      transition: color 0.3s;
+    }
+    &:visited {
+      color: @common-link-color-visited;
+      text-decoration: underline;
+    }
+    &:hover {
+      color: @common-link-color-visited;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+  }
 }
 
 #imageOverlay {
@@ -172,6 +209,7 @@ div.elastic.inner {
 
 #ahmiaHeader {
   overflow: hidden;
+  color: @text-on-dark-bg;
   &.mini {
     h1 { display: none; }
     #searchForm { display: none; }
@@ -189,7 +227,7 @@ div.elastic.inner {
         font-family: 'alfphabetiv', 'Alfphabet IV', 'Alfphabet', 'Helvetica', sans-serif;
         font-size: 2.0em;
         a {
-          color: rgba(0,0,0,0.7);
+          color: rgba(255,255,255,0.7);
           box-shadow: none;
           text-decoration: none;
           transition: 0.3s all;
@@ -256,7 +294,7 @@ div.elastic.inner {
       list-style-type: none;
 
       a {
-        color: @link-color-dark;
+        color: @link-color-light;
         text-decoration: none;
         &:hover {
           text-decoration: underline;
@@ -457,4 +495,83 @@ div.elastic.inner {
       float: right;
     }
   }
+}
+
+#ahmiaAboutPage {
+  /* elasticize this for legibility */
+  width: 70%;
+  max-width: 960px;
+  margin: 0 auto;
+  
+  h2, h3, h4 {
+    font-family: 'robotolight', Roboto, Helvetica, sans-serif;
+  }
+  h2 {
+    font-size: 1.8em;
+  }
+  h3 {
+    font-size: 1.5em;
+  }
+  h4 {
+    font-size: 1.3em;
+  }
+  p, li {
+    font-size: 1.3em;
+    line-height: 1.8em;
+  }
+
+  div.aboutAhmia, div.aboutTeam, div.moreOnAhmia, div.credits {
+    margin: 1em 0;
+    padding: 1em 0;
+    border-bottom: 1px solid @light-grey-alpha;
+    overflow: hidden;
+    h3 {
+      color: @dark-grey-alpha;
+      margin-top: 0;
+      padding-top: 0;
+    }
+  }
+
+  div.aboutTeam {
+    p {
+      margin-top: 1.6em;
+    }
+
+    img.teamPhoto {
+      padding-bottom: 1em;
+      padding-right: 3em;
+      float: left;
+      width: 160px;
+      height: 160px;
+    }
+  }
+
+  div.credits {
+    border-bottom-color: transparent;
+    p {
+      color: @medium-grey-alpha;
+      margin-top: 0;
+      text-align: center;
+      a {
+        &:link, &:visited, &:hover {
+          color: @medium-grey-alpha;
+        }
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+    ul {
+      list-style-type: none;
+      display: flex;
+      overflow: hidden;
+      justify-content: center;
+      li {
+        display: inline-block;
+        margin-right: 1em;
+      }
+    }
+    margin-bottom: 3em;
+  }
+
 }
