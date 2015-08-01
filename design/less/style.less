@@ -114,6 +114,9 @@
   color: transparent;
   background-color: transparent;
 }
+.hidden {
+  display: none;
+}
 
 /* core controls */
 .searchForm {
@@ -147,6 +150,28 @@
 
       transition: all 0.2s;
     }
+  }
+}
+
+div#flashMessage, div.flashMessage {
+  margin: 0 auto 1em;
+  p {
+    text-align: center;
+    border-bottom: none;
+    padding: 1em;
+    margin: 0 0 1em 0;
+  }
+  p.info {
+    background-color: @light-grey-alpha;
+    color: @medium-grey-alpha;
+  }
+  p.warn {
+    background-color: @color-warning-background;
+    color: @color-warning;
+  }
+  p.error {
+    background-color: @color-error-background;
+    color: @color-error;
   }
 }
 
@@ -565,27 +590,6 @@ div.elastic.inner {
   input[type="text"] {
     box-shadow: 0 0 0.1em @medium-grey-alpha;
     margin-right: 0.5em;
-  }
-  div#flashMessage {
-    margin: 0 auto 1em;
-    p {
-      text-align: center;
-      border-bottom: none;
-      padding: 1em;
-      margin: 0 0 1em 0;
-    }
-    p.info {
-      background-color: @light-grey-alpha;
-      color: @medium-grey-alpha;
-    }
-    p.warn {
-      background-color: @color-warning-background;
-      color: @color-warning;
-    }
-    p.error {
-      background-color: @color-error-background;
-      color: @color-error;
-    }
   }
 }
 
