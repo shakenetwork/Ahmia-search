@@ -52,16 +52,23 @@
             <br><strong>Note that you need JavaScript enabled
               to add an .onion service.</strong>
           </p>
-          <form id="addToAhmia" method="post" action="/add_service">
-            <input type="hidden" name="pow_collision_value" value="0">
-            <input type="hidden" name="pow_work_factor" value="4">
-            <input type="hidden" name="pow_work_type" value="224">
-            <input type="hidden" name="pow_work_prefix" value="AHMIA_102839432">
-            <input type="hidden" name="pow_work_item" value="">
-            <input type="hidden" name="pow_spent_tokens" value="">
-            <input type="text" placeholder="Enter your .onion address here">
-            <input type="submit" value="Add to Ahmia">
-          </form>
+          <div id="ahmiaFormContainer">
+            <div id="flashMessage">
+              <p class="info">Running anti-spam calculation...</p>
+              <p class="warn">Please check your onion address.</p>
+              <p class="error">This is a fatal warning</p>
+            </div>
+            <form id="addToAhmia" method="post" action="/add_service">
+              <input type="hidden" name="pow_collision_value" value="0">
+              <input type="hidden" name="pow_work_factor" value="4">
+              <input type="hidden" name="pow_work_type" value="224">
+              <input type="hidden" name="pow_work_prefix" value="AHMIA_102839432">
+              <input type="hidden" name="pow_work_item" value="">
+              <input type="hidden" name="pow_spent_tokens" value="">
+              <input type="text" placeholder="Enter your .onion address here">
+              <input type="submit" value="Add to Ahmia">
+            </form>
+          </div>
         </div>
         <!-- end content -->
         </div>

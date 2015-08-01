@@ -42,6 +42,12 @@
 @common-link-color: #19749b;
 @common-link-color-visited: #294957;
 
+@color-warning-background: @accent-complementary;
+@color-warning: @dark-grey-alpha;
+
+@color-error-background: #ff707d;
+@color-error: @dark-grey-alpha;
+
 /*
   LINK COLORS
 
@@ -512,6 +518,12 @@ div.elastic.inner {
     margin-bottom: 2em;
   }
   .searchForm;
+  div#ahmiaFormContainer  {
+    display: block;
+    width: 70%;
+    overflow: visible;
+    margin: -1em auto;
+  }
   form {
     display: flex;
     justify-content: center;
@@ -520,6 +532,27 @@ div.elastic.inner {
     box-shadow: 0 0 0.1em @medium-grey-alpha;
     margin-right: 0.5em;
   }
+  div#flashMessage {
+    margin: 0 auto 1em;
+    p {
+      text-align: center;
+      border-bottom: none;
+      padding: 1em;
+      margin: 0 0 1em 0;
+    }
+    p.info {
+      background-color: @light-grey-alpha;
+      color: @medium-grey-alpha;
+    }
+    p.warn {
+      background-color: @color-warning-background;
+      color: @color-warning;
+    }
+    p.error {
+      background-color: @color-error-background;
+      color: @color-error;
+    }
+  }
 }
 
 #ahmiaAboutPage {
@@ -527,7 +560,7 @@ div.elastic.inner {
   width: 70%;
   max-width: 960px;
   margin: 0 auto;
-  
+
   h2, h3, h4 {
     font-family: 'robotolight', Roboto, Helvetica, sans-serif;
   }
