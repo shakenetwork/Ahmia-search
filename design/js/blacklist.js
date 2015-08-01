@@ -26,7 +26,7 @@
 
   var getBlacklist = function() {
     if (blacklistedAddresses.length > 0) return blacklistedAddresses;
-    var addressList = $('ul#blacklist li').each(function() {
+    var addressList = $('ul#blacklist li code').each(function() {
       blacklistedAddresses.push($(this).text().toLowerCase());
     });
     return blacklistedAddresses;
@@ -50,14 +50,12 @@
       return;
     }
     var md5 = window.md5(plaintext);
-    console.log(plaintext, md5);
     var isBlacklisted = false;
     for (var i=0; i<blacklistedAddresses.length; i++) {
       if (md5 === blacklistedAddresses[i]) {
         isBlacklisted = true;
       }
     }
-    console.log(isBlacklisted);
     if (isBlacklisted) {
       showMessage('error', "This .onion is on the Ahmia blacklist.");
     } else {

@@ -209,6 +209,10 @@ body {
       transition: color 0.3s;
     }
   }
+
+  code {
+    font-family: monospace;
+  }
 }
 
 #imageOverlay {
@@ -590,6 +594,58 @@ div.elastic.inner {
   input[type="text"] {
     box-shadow: 0 0 0.1em @medium-grey-alpha;
     margin-right: 0.5em;
+  }
+}
+
+#ahmiaBlacklist {
+  width: 70%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding-top: 1em;
+
+  p {
+    font-size: 1.3em;
+    line-height: 1.8em;
+    text-align: left;
+    &.end {
+      border-bottom: 1px solid @light-grey-alpha;
+      margin-bottom: 2em;
+      padding-bottom: 2em;
+    }
+  }
+  .searchForm;
+  div#ahmiaFormContainer  {
+    display: block;
+    width: 70%;
+    overflow: visible;
+    margin: 1em auto 7em;
+
+    div#flashMessage {
+      margin-top: 1em;
+    }
+  }
+  form {
+    display: flex;
+    justify-content: center;
+  }
+  input[type="text"] {
+    box-shadow: 0 0 0.1em @medium-grey-alpha;
+    margin-right: 0.5em;
+  }
+  h2, h3, h4 {
+    font-family: 'robotolight', Roboto, Helvetica, sans-serif;
+  }
+  h2 {
+    font-size: 1.8em;
+  }
+  h3 {
+    font-size: 1.5em;
+    &.checkForm {
+      text-align: center;
+    }
+  }
+  h4 {
+    font-size: 1.3em;
   }
 }
 

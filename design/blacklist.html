@@ -1,0 +1,107 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>About Us &mdash; Ahmia</title>
+        <meta name="description" content="A search engine for services accessible on the Tor network.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet/less" href="less/style.less">
+        <script src="js/less.min.js"></script>
+        <script src="js/modernizr.js"></script>
+    </head>
+    <body>
+      <a id="top"></a>
+      <div class="outer">
+        <div id="content" class="inner">
+        <div id="notTorBrowserWarning">
+          <p>It appears that you are not using the Tor Browser.</p>
+        </div>
+        <div id="ahmiaHeader" class="maxi">
+          <div class="maxiContent">
+            <h1><a href="/">Ahmia</a></h1>
+            <form id="searchForm" class="searchForm autocomplete" action="/" method="get">
+              <input id="id_q" type="search" name="q" placeholder="Search Ahmia">
+              <input type="submit" value="Search" style="submitButton">
+            </form>
+          </div>
+          <nav>
+            <a href="#" id="collapseIfResponsive">&nbsp;<span class="sr">Collapse Menu</span></a>
+            <ul class="primary">
+              <li><a href="/about" title="Learn more about Ahmia and its team.">About Ahmia</a></li>
+              <li><a href="/directory" title="A directory of .onion services.">Directory</a></li>
+              <li><a href="/search" title="Advanced (full-text) search.">Advanced</a></li>
+              <li><a href="/stats/viewer" title="Statistics about the Ahmia engine.">Statistics</a></li>
+            </ul>
+            <ul class="secondary">
+              <li><a href="/add">Add your .onion</a></li>
+              <li><a href="/disclaimer">Disclaimer</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div id="ahmiaBlacklist">
+          <p class="end">
+            Ahmia blacklists sites containing child abuse material from its index. This list contains
+            a masked version of all hidden service .onion addresses that have been added to the Ahmia
+            blacklist, and is updated whenever Ahmia blacklists a new .onion site for abuse material.
+          </p>
+          <h3>Blacklist information</h3>
+          <p>
+            Hidden service names are masked by creating an MD5 sum of the onion name plus a new line. 
+            For example, if
+            the onion is <code>abcdefghijk.onion</code>, the resulting hash would be
+            <code>e271dc47fa80ddc9e6590042ad9ed2b7</code>.
+            This way it is possible for researchers and administrators to check if a site has been
+            blacklisted from the index without making the .onion hostnames easily accessible.
+          </p>
+          <p>
+            Ahmia offers an API endpoint for this blacklisting. To check if a site has been blacklisted,
+            make a GET request to 
+            <code>https://ahmia.fi/address/$ONION_SERVICE_NAME/</code>, where 
+            <code>$ONION_SERVICE_NAME</code> is
+            the "abcdefghijk" part of the .onion address. If you have JavaScript enabled, the form below will
+            perform a client side confirmation of being blacklisted or not.
+          </p>
+          <p class="end">
+            Blacklist hash data is available for raw text download <a href="#">here</a>. You may use this
+            in your own search indexes to remove abusive content.
+          </p>
+          <h3 class="checkForm">Check For a Banned Service</h3>
+          <div id="ahmiaFormContainer" class="hidden">
+            <form id="checkBlacklist" method="post" action="#">
+              <input type="text" id="blacklistInput" placeholder="Enter your .onion address here">
+              <input type="submit" value="Check">
+            </form>
+            <div id="flashMessage">
+              <p class="info">info</p>
+              <p class="warn">warn</p>
+              <p class="error">error</p>
+            </div>
+          </div>
+
+          <div class="hidden">
+          <h3>Banned Hidden Services</h3>
+          <ul id="blacklist">
+            <li><code>e271dc47fa80ddc9e6590042ad9ed2b7</code></li>
+            <li><code>cf6833aca0e01fc5510d3bbb5a796f63</code></li>
+            <li><code>d1add0a0e6b421c575ca908cbc9c2b33</code></li>
+          </ul>
+          </div>
+        </div>
+        <!-- end content -->
+        </div>
+      </div>
+
+      <script src="js/jquery.min.js"></script>
+      <script src="js/md5.js"></script>
+      <script src="js/blacklist.js"></script>
+      <script>
+      $(document).ready(function() {
+      });
+      </script>
+    </body>
+</html>
