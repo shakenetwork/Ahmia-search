@@ -10,7 +10,8 @@
         workType:   'pow_work_type',
         workPrefix: 'pow_work_prefix',
         workItem:   'pow_work_item',
-        collisionValue: 'pow_collision_value'
+        collisionValue: 'pow_collision_value',
+        spentTokens: 'pow_spent_tokens'
       }
     };
 
@@ -32,10 +33,13 @@
           $('input[name="'+options.fieldNames.workPrefix+'"]', options.$target).val();
         var collisionValue  =
           $('input[name="'+options.fieldNames.collisionValue+'"]', options.$target).val();
+        var spentTokens     =
+          $('input[name="'+options.fieldNames.spentTokens+'"]', options.$target).val();
         if (workFactorInput) options.workFactor = parseInt(workFactorInput);
         if (workTypeInput)   options.workType   = parseInt(workTypeInput);
         if (workPrefix)      options.workPrefix = workPrefix;
         if (collisionValue)  options.collisionValue = collisionValue;
+        if (spentTokens)     options.spentTokens = spentTokens.split(',');
       }
     };
 
@@ -46,12 +50,19 @@
       return true;
     };
 
+    var isUnspent = function(hash) {
+      for (var i=0; i<options.spentTokens.length; i++) {
+        if (hash === options.spentTokens[i]) return false;
+      }
+      return true;
+    };
+
     var getProofOfWork = function() {
       var i = 0;
       var currentHash;
       while (true) {
         currentHash = getSHA(options.workType, options.workPrefix + i);
-        if (meetsWorkFactor(currentHash)) {
+        if (meetsWorkFactor(currentHash) && isUnspent(currentHash)) {
           return [currentHash, i];
         }
         i++;
