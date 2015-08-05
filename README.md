@@ -1,6 +1,4 @@
-# Ahmia: Tor .onion Search
-
-<center>![https://ahmia.fi/](https://raw.githubusercontent.com/razorfinger/ahmia/ahmia-redesign/ahmia-logotype.png)</center>
+<div style="text-align: center">![https://ahmia.fi/](https://raw.githubusercontent.com/razorfinger/ahmia/ahmia-redesign/ahmia-logotype.png)</div>
 
 Ahmia is the search engine for `.onion` domains on the Tor anonymity
 network. It is led by [Juha Nurmi](//github.com/juhanurmi) and is based
