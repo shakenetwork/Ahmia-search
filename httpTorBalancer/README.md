@@ -5,6 +5,16 @@ Balance traffic between multiple Tor clients.
 
 Keeps the circuit and returns connections according to onion address.
 
+```
+HAProxy <--HTTP-->  DeleGate1 <--socks--> Tor1  <-->  Rendezvous Points
+                    DeleGate2 <--socks--> Tor2  <-->  Rendezvous Points
+                    ...
+                    DeleGate9 <--socks--> Tor9  <-->  Rendezvous Points
+```
+
+![Stats GUI](https://raw.githubusercontent.com/ahmia/search/ahmia-redesign/httpTorBalancer/stats.png)
+
+
 Setup httpTorBalancer
 ---------------------
 
