@@ -1,18 +1,27 @@
-httpTorBalancer
-===============
+httpTorBalancer - Rotating Proxies with HAProxy
+===============================================
 
-Balance traffic between multiple Tor clients and Polipo HTTP proxies.
+Balance traffic between multiple Tor clients.
 
 Keeps the circuit and returns connections according to onion address.
 
 Setup httpTorBalancer
 ---------------------
 
-- Open 10 Tor clients
+- Haproxy
+- DeleGate
 - Tor in Tor2web mode with fast Tor2webRendezvousPoints
-- Open 10 Polipo proxies
-- Socks 19001 --> HTTP proxy 18001 ... socks 19010 --> HTTP proxy 18010
 
+```sh
+$ sudo apt-get install haproxy
+$ sudo cp rotating-tor-proxies.cfg /etc/haproxy/
+$ sudo service polipo restart
+```
+
+Old way to setup with one Polipo proxy
+--------------------------------------
+
+- No load balancing, one Tor + proxy instance
 
 ```sh
 $ sudo apt-get install polipo
