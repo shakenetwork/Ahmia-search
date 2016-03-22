@@ -28,15 +28,16 @@ $ bash opentors.sh
 Finally, you can test your HAProxy:
 
 ```sh
-curl -x localhost:3128 http://msydqstlz2kzerdg.onion/
+$ curl -x localhost:3128 http://msydqstlz2kzerdg.onion/
+$ http://localhost:5000/stats
 ```
 
 You can kill your Tors, DeleGates and HAProxy by
 
 ```sh
-killall haproxy
-killall tor
-killall delegates
+$ killall haproxy
+$ killall tor
+$ killall delegates
 ```
 
 Old way to setup with one Polipo proxy
