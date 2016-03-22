@@ -25,6 +25,20 @@ $ sudo apt-get install haproxy
 $ bash opentors.sh
 ```
 
+Finally, you can test your HAProxy:
+
+```sh
+curl -x localhost:3128 http://msydqstlz2kzerdg.onion/
+```
+
+You can kill your Tors, DeleGates and HAProxy by
+
+```sh
+killall haproxy
+killall tor
+killall delegates
+```
+
 Old way to setup with one Polipo proxy
 --------------------------------------
 
