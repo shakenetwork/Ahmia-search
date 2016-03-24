@@ -36,6 +36,7 @@ service elasticsearch stop
 swapoff -a
 service elasticsearch start
 ```
+Creating Index Settings:
 
 ```sh
 $ curl -XPUT -i "localhost:9200/crawl/" -d "@./mappings.json"
