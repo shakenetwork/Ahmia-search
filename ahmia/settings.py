@@ -52,7 +52,7 @@ ELASTICSEARCH_TLS_FPRINT = "8C:DC:67:EA:C3:B3:97:94:92:30:81:35:8C:C6:D9:2A:E2:E
 ELASTICSEARCH_HOST = "ahmia.fi"
 ELASTICSEARCH_PORT = 443
 
-PROXY_BASE_URL = 'http://localhost:9200/'
+PROXY_BASE_URL = 'http://localhost:9200/'# For external access 'https://ahmia.fi/elasticsearch/'
 
 # Email settings
 EMAIL_USE_TLS = True
